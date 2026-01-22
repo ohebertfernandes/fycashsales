@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fylife - Facility Your Life</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: { bg: '#0f172a', card: '#1e293b', text: '#f1f5f9', border: '#334155' },
+                        brand: {
+                            cyan: '#21e9ca',
+                            purple: '#8b5ae4',
+                            dark: '#0B1120'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, #21e9ca 0%, #8b5ae4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .bg-gradient-brand {
+            background: linear-gradient(135deg, #21e9ca 0%, #8b5ae4 100%);
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(33, 233, 202, 0.1), 0 10px 10px -5px rgba(33, 233, 202, 0.04);
+        }
+
+        /* Animation for slogan */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-50 overflow-x-hidden">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-full bg-gradient-brand flex items-center justify-center text-white text-lg shadow-lg">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <span class="font-black text-2xl tracking-tight text-white">Fylife</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-slate-300 hover:text-brand-cyan transition font-medium">Funcionalidades</a>
+                    <a href="#how-it-works" class="text-slate-300 hover:text-brand-cyan transition font-medium">Como Funciona</a>
+                    <a href="#testimonials" class="text-slate-300 hover:text-brand-cyan transition font-medium">Depoimentos</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="text-slate-300 hover:text-white font-bold hidden sm:block">Login</a>
+                    <a href="#" class="bg-brand-cyan text-brand-dark px-6 py-2.5 rounded-full font-bold hover:opacity-90 transition shadow-[0_0_20px_rgba(33,233,202,0.3)] transform hover:scale-105">Começar Grátis</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-brand-purple/20 rounded-full blur-[128px]"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-brand-cyan/10 rounded-full blur-[128px]"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div data-aos="fade-up">
+                <span class="inline-block py-1 px-3 rounded-full bg-slate-800 border border-slate-700 text-brand-cyan text-xs font-bold uppercase tracking-wider mb-6">🚀 O Futuro das suas Finanças</span>
+                <h1 class="text-5xl md:text-7xl font-black tracking-tight mb-6 leading-tight">
+                    <span id="typewriter" class="text-gradient">Facility</span> <br class="md:hidden" />Your Life.
+                </h1>
+                <p class="mt-4 text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+                    Pare de sobreviver e comece a viver. O **Fylife** utiliza inteligência financeira para organizar o seu dinheiro, calcular o seu Score e planear a sua liberdade.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#" class="bg-gradient-brand text-brand-dark px-8 py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-brand-cyan/20 transition transform hover:-translate-y-1">
+                        Criar Conta Gratuita <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#demo" class="px-8 py-4 rounded-xl font-bold text-lg border border-slate-700 hover:bg-slate-800 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-play text-brand-purple"></i> Ver Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dashboard Preview Mockup (Simulation) -->
+            <div class="mt-20 relative mx-auto max-w-5xl" data-aos="fade-up" data-aos-delay="200">
+                <div class="rounded-2xl border border-slate-700 bg-slate-900/90 backdrop-blur-sm shadow-2xl overflow-hidden">
+                    
+                    <!-- FAKE BROWSER BAR -->
+                    <div class="bg-slate-800 px-4 py-3 flex items-center gap-2 border-b border-slate-700">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <div class="ml-4 bg-slate-900/50 rounded-md px-3 py-1 text-xs text-slate-500 font-mono flex-grow text-center opacity-70">fylife.app/dashboard</div>
+                    </div>
+
+                    <!-- FAKE APP INTERFACE -->
+                    <div class="flex h-[500px] text-left">
+                        <!-- Sidebar -->
+                        <div class="w-64 bg-slate-900 border-r border-slate-800 p-4 hidden md:flex flex-col gap-4">
+                            <div class="flex items-center gap-2 mb-4 px-2">
+                                <div class="w-8 h-8 rounded-full bg-gradient-brand flex items-center justify-center text-white text-xs">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <span class="font-bold text-white">Fylife</span>
+                            </div>
+                            <div class="space-y-1">
+                                <div class="bg-brand-cyan/10 text-brand-cyan px-3 py-2 rounded-lg text-sm font-bold flex items-center gap-3 border-l-4 border-brand-cyan"><i class="fa-solid fa-chart-pie"></i> Geral</div>
+                                <div class="text-slate-400 px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-800 flex items-center gap-3 transition"><i class="fa-solid fa-scale-balanced"></i> Orçamento</div>
+                                <div class="text-slate-400 px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-800 flex items-center gap-3 transition"><i class="fa-solid fa-list-check"></i> Lançamentos</div>
+                                <div class="text-slate-400 px-3 py-2 rounded-lg text-sm font-medium hover:bg-slate-800 flex items-center gap-3 transition"><i class="fa-solid fa-bullseye"></i> Metas</div>
+                            </div>
+                            
+                            <div class="mt-auto bg-slate-800 rounded-xl p-4 border border-slate-700">
+                                <p class="text-[10px] text-slate-400 uppercase font-bold mb-2">Score Atual</p>
+                                <div class="flex items-center gap-3">
+                                    <div class="text-2xl font-bold text-white">850</div>
+                                    <div class="text-xs text-green-400 font-bold bg-green-500/20 px-2 py-0.5 rounded">+12%</div>
+                                </div>
+                                <div class="w-full bg-slate-700 h-1.5 rounded-full mt-2">
+                                    <div class="bg-gradient-brand h-1.5 rounded-full w-[85%]"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Content -->
+                        <div class="flex-grow bg-slate-950 p-6 overflow-hidden relative">
+                            <!-- Header -->
+                            <div class="flex justify-between items-center mb-8">
+                                <div>
+                                    <h2 class="text-2xl font-bold text-white">Visão Geral</h2>
+                                    <p class="text-slate-400 text-xs">Bem-vindo de volta, Carlos!</p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400"><i class="fa-solid fa-bell"></i></div>
+                                    <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-brand-cyan to-brand-purple p-[1px]">
+                                        <div class="w-full h-full rounded-full bg-slate-900 flex items-center justify-center text-xs font-bold">CM</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Cards -->
+                            <div class="grid grid-cols-3 gap-4 mb-6">
+                                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 shadow-lg relative overflow-hidden group hover:border-brand-cyan/30 transition duration-300">
+                                    <div class="absolute top-0 right-0 w-20 h-20 bg-brand-cyan/5 rounded-bl-full -mr-10 -mt-10 transition group-hover:bg-brand-cyan/10"></div>
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Saldo Atual</p>
+                                    <p class="text-lg font-bold text-white">R$ 12.450,00</p>
+                                </div>
+                                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 shadow-lg hover:border-green-500/30 transition duration-300">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Receita</p>
+                                    <p class="text-lg font-bold text-brand-cyan">+ R$ 5.200,00</p>
+                                </div>
+                                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 shadow-lg hover:border-red-500/30 transition duration-300">
+                                    <p class="text-[10px] text-slate-400 uppercase font-bold mb-1">Despesas</p>
+                                    <p class="text-lg font-bold text-red-500">- R$ 2.100,00</p>
+                                </div>
+                            </div>
+
+                            <!-- Charts Area (Simulated) -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
+                                <!-- Simulated Chart -->
+                                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 relative overflow-hidden group shadow-lg">
+                                    <div class="flex justify-between mb-4 items-center">
+                                        <h3 class="font-bold text-slate-300 text-xs">Fluxo de Caixa</h3>
+                                        <div class="text-[10px] bg-slate-800 px-2 py-0.5 rounded text-slate-400">Últimos 6 meses</div>
+                                    </div>
+                                    <!-- CSS Chart Bars -->
+                                    <div class="flex items-end justify-between h-32 gap-3 px-2 pb-2 border-b border-slate-800">
+                                        <div class="w-full bg-brand-cyan/20 h-[40%] rounded-t-sm relative group-hover:h-[50%] transition-all duration-700 ease-out"></div>
+                                        <div class="w-full bg-brand-cyan/40 h-[60%] rounded-t-sm relative group-hover:h-[70%] transition-all duration-700 delay-75 ease-out"></div>
+                                        <div class="w-full bg-brand-cyan/30 h-[30%] rounded-t-sm relative group-hover:h-[45%] transition-all duration-700 delay-100 ease-out"></div>
+                                        <div class="w-full bg-brand-cyan h-[80%] rounded-t-sm relative group-hover:h-[85%] transition-all duration-700 delay-150 ease-out shadow-[0_0_15px_rgba(33,233,202,0.4)]"></div>
+                                        <div class="w-full bg-brand-cyan/50 h-[50%] rounded-t-sm relative group-hover:h-[60%] transition-all duration-700 delay-200 ease-out"></div>
+                                        <div class="w-full bg-brand-cyan/60 h-[70%] rounded-t-sm relative group-hover:h-[75%] transition-all duration-700 delay-300 ease-out"></div>
+                                    </div>
+                                    <div class="flex justify-between text-[10px] text-slate-500 mt-2 px-1 font-mono">
+                                        <span>JAN</span><span>FEV</span><span>MAR</span><span>ABR</span><span>MAI</span><span>JUN</span>
+                                    </div>
+                                </div>
+
+                                <!-- Simulated Transaction List -->
+                                <div class="bg-slate-900 p-4 rounded-xl border border-slate-800 shadow-lg">
+                                    <h3 class="font-bold text-slate-300 text-xs mb-4">Últimas Transações</h3>
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between items-center text-xs p-2 hover:bg-slate-800 rounded transition cursor-pointer">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-8 h-8 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center"><i class="fa-solid fa-utensils"></i></div>
+                                                <div>
+                                                    <p class="text-slate-300 font-bold">Restaurante</p>
+                                                    <p class="text-slate-500 text-[9px]">Hoje, 12:30</p>
+                                                </div>
+                                            </div>
+                                            <span class="text-red-400 font-bold">- R$ 120,00</span>
+                                        </div>
+                                        <div class="flex justify-between items-center text-xs p-2 hover:bg-slate-800 rounded transition cursor-pointer">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-8 h-8 rounded-full bg-brand-cyan/10 text-brand-cyan flex items-center justify-center"><i class="fa-solid fa-briefcase"></i></div>
+                                                <div>
+                                                    <p class="text-slate-300 font-bold">Freelance UI</p>
+                                                    <p class="text-slate-500 text-[9px]">Ontem</p>
+                                                </div>
+                                            </div>
+                                            <span class="text-brand-cyan font-bold">+ R$ 1.500,00</span>
+                                        </div>
+                                        <div class="flex justify-between items-center text-xs p-2 hover:bg-slate-800 rounded transition cursor-pointer">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-8 h-8 rounded-full bg-red-500/10 text-red-500 flex items-center justify-center"><i class="fa-solid fa-car"></i></div>
+                                                <div>
+                                                    <p class="text-slate-300 font-bold">Transporte</p>
+                                                    <p class="text-slate-500 text-[9px]">Ontem</p>
+                                                </div>
+                                            </div>
+                                            <span class="text-red-400 font-bold">- R$ 45,00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Badge 1 (Existing but updated z-index) -->
+                    <div class="absolute top-20 -right-5 bg-slate-800 p-4 rounded-xl border border-slate-700 shadow-xl hidden md:block animate-bounce z-20" style="animation-duration: 3s;">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Score Fylife</p>
+                                <p class="font-bold text-white text-lg">850 pts</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge 2 (Existing but updated z-index) -->
+                    <div class="absolute bottom-10 -left-5 bg-slate-800 p-4 rounded-xl border border-slate-700 shadow-xl hidden md:block animate-bounce z-20" style="animation-duration: 4s;">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-brand-purple/20 text-brand-purple flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-bullseye"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400">Meta Viagem</p>
+                                <p class="font-bold text-white text-lg">85% Concluído</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-24 bg-slate-900/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Por que escolher o <span class="text-gradient">Fylife</span>?</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Mais do que uma folha de cálculo bonita. Uma ferramenta proativa que analisa os seus hábitos.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-slate-800 p-8 rounded-2xl border border-slate-700" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-cyan/10 rounded-xl flex items-center justify-center text-brand-cyan text-2xl mb-6">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Inteligência Financeira</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        O nosso algoritmo "Score Fylife" analisa as suas receitas, despesas e investimentos para lhe dar uma nota de saúde financeira em tempo real.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-slate-800 p-8 rounded-2xl border border-slate-700" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-brand-purple/10 rounded-xl flex items-center justify-center text-brand-purple text-2xl mb-6">
+                        <i class="fa-solid fa-wifi-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Modo Offline Robusto</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Sem internet? Sem problemas. Lance os seus gastos em qualquer lugar. Os dados sincronizam automaticamente quando voltar a estar online.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-slate-800 p-8 rounded-2xl border border-slate-700" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 text-2xl mb-6">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Sugestões "Pai Rico"</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Receba sugestões automáticas de distribuição de orçamento baseadas em métodos comprovados de riqueza.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="py-20 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="zoom-in">
+                    <div class="text-4xl font-black text-white mb-2 counter" data-target="15000">0</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide font-bold">Utilizadores Ativos</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100">
+                    <div class="text-4xl font-black text-brand-cyan mb-2">R$ <span class="counter" data-target="25">0</span>M</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide font-bold">Geridos</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                    <div class="text-4xl font-black text-brand-purple mb-2 counter" data-target="98">0</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide font-bold">% Satisfação</div>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300">
+                    <div class="text-4xl font-black text-white mb-2 counter" data-target="24">0</div>
+                    <div class="text-sm text-slate-500 uppercase tracking-wide font-bold">Horas de Suporte</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-24 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-cyan/5 rounded-full blur-[128px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">O que dizem os <span class="text-brand-cyan">Fylifers</span></h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700" data-aos="fade-up">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full border-2 border-brand-purple">
+                        <div>
+                            <h4 class="font-bold text-white">Ana Souza</h4>
+                            <p class="text-xs text-slate-400">Designer Freelancer</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 text-sm italic">"Eu nunca soube para onde ia o meu dinheiro. Com o Fylife, consegui juntar para a minha viagem à Europa em apenas 8 meses. O Score motiva muito!"</p>
+                    <div class="flex text-yellow-500 text-xs mt-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full border-2 border-brand-cyan">
+                        <div>
+                            <h4 class="font-bold text-white">Carlos Mendes</h4>
+                            <p class="text-xs text-slate-400">Engenheiro</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 text-sm italic">"A função de sugestão de orçamento baseada no Pai Rico é genial. Finalmente saí das dívidas e comecei a investir."</p>
+                    <div class="flex text-yellow-500 text-xs mt-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+
+                 <!-- Card 3 -->
+                 <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700 hidden lg:block" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-12 h-12 rounded-full border-2 border-brand-purple">
+                        <div>
+                            <h4 class="font-bold text-white">Beatriz Lima</h4>
+                            <p class="text-xs text-slate-400">Empresária</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-300 text-sm italic">"Uso para a minha vida pessoal e para o meu pequeno negócio. A importação de CSV poupa-me horas de trabalho manual."</p>
+                    <div class="flex text-yellow-500 text-xs mt-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FOOTER -->
+    <section class="py-20">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-gradient-brand rounded-3xl p-10 md:p-16 text-center shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-full bg-white opacity-5 pattern-dots"></div>
+                
+                <h2 class="text-3xl md:text-5xl font-black text-brand-dark mb-6 relative z-10">Pronto para a sua nova vida?</h2>
+                <p class="text-brand-dark/80 text-lg mb-8 max-w-2xl mx-auto relative z-10 font-medium">
+                    Junte-se a milhares de pessoas que já controlam o seu futuro financeiro com a Fylife.
+                </p>
+                <button class="bg-brand-dark text-white px-10 py-4 rounded-full font-bold text-lg hover:shadow-xl transition transform hover:scale-105 relative z-10">
+                    Começar Agora Grátis
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-12 text-sm">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-gradient-brand flex items-center justify-center text-white text-xs">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <span class="font-bold text-white text-lg">Fylife</span>
+            </div>
+            <div class="text-slate-500">
+                &copy; 2024 Fylife Inc. Todos os direitos reservados.
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="text-slate-400 hover:text-brand-cyan"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-brand-cyan"><i class="fa-brands fa-twitter text-xl"></i></a>
+                <a href="#" class="text-slate-400 hover:text-brand-cyan"><i class="fa-brands fa-linkedin text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Init AOS Animation Library
+        AOS.init({
+            once: true,
+            duration: 800,
+        });
+
+        // Slogan Animation
+        const sloganElement = document.getElementById('typewriter');
+        const words = ["Facility", "From", "Free"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
+
+        function type() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                sloganElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 50;
+            } else {
+                sloganElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 150;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                isDeleting = true;
+                typeSpeed = 2000; // Wait before deleting
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(type, typeSpeed);
+        }
+
+        // Start typing animation
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(type, 1000);
+
+            // Counter Animation
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / 200;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                // Simple intersection observer to start count when visible
+                const observer = new IntersectionObserver((entries) => {
+                    if(entries[0].isIntersecting) {
+                        updateCount();
+                        observer.disconnect();
+                    }
+                });
+                observer.observe(counter);
+            });
+        });
+    </script>
+</body>
+</html>
