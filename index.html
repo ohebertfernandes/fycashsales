@@ -7,6 +7,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://trello.com/1/cards/69839337e9ae9fb5e25dcf21/attachments/6983933d731d0a970bd7b9e1/download/WhatsApp_Image_2026-02-04_at_15.40.37-removebg-preview.png">
+
     <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +24,9 @@
                 extend: {
                     colors: {
                         slate: { 50: '#f8fafc', 100: '#f1f5f9', 800: '#1e293b', 900: '#0f172a', 950: '#020617' },
-                        primary: { DEFAULT: '#0ea5e9', dark: '#0284c7' },
-                        accent: { DEFAULT: '#6366f1' }
+                        // Novas Cores da Marca
+                        primary: { DEFAULT: '#8D5AE4', dark: '#7c3aed' }, // Roxo
+                        accent: { DEFAULT: '#21E9CA' } // Ciano
                     }
                 }
             }
@@ -35,18 +39,19 @@
             background-size: 40px 40px;
         }
         .text-glow {
-            text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+            text-shadow: 0 0 20px rgba(141, 90, 228, 0.5); /* Roxo Glow */
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-900 antialiased">
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-accent selection:text-slate-900">
 
     <!-- Header -->
     <header class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold"><i class="fa-solid fa-bolt"></i></div>
-                <span class="font-bold text-xl tracking-tight">Fycash.</span>
+                <!-- Nova Logo -->
+                <img src="https://trello.com/1/cards/69839337e9ae9fb5e25dcf21/attachments/6983933d731d0a970bd7b9e1/download/WhatsApp_Image_2026-02-04_at_15.40.37-removebg-preview.png" alt="Fycash" class="h-8 w-auto object-contain">
+                <span class="font-bold text-xl tracking-tight text-slate-800">Fycash.</span>
             </div>
             <nav class="hidden md:flex gap-8 text-sm font-medium text-slate-600">
                 <a href="#funcionalidades" class="hover:text-primary transition">O que faz?</a>
@@ -54,7 +59,8 @@
                 <a href="#precos" class="hover:text-primary transition">Planos</a>
             </nav>
             <div class="flex gap-4">
-                <a href="https://ohebertfernandes.github.io/fycash/" class="hidden md:block px-4 py-2 text-sm font-bold text-slate-600 hover:text-primary transition">Login</a>
+                <!-- CORREÇÃO: Link de Login aponta para o index.html (App Interno) -->
+                <a href="index.html" class="hidden md:block px-4 py-2 text-sm font-bold text-slate-600 hover:text-primary transition">Login</a>
                 <a href="#precos" class="px-5 py-2.5 bg-slate-900 text-white text-sm font-bold rounded-xl hover:bg-slate-800 transition shadow-lg shadow-slate-900/20">Acesso Pro</a>
             </div>
         </div>
@@ -62,10 +68,12 @@
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20 md:pt-48 md:pb-32 hero-pattern relative overflow-hidden">
+        <!-- Blobs de fundo atualizados para Roxo/Ciano -->
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent/10 blur-[100px] rounded-full pointer-events-none"></div>
         
         <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-            <span class="inline-block px-4 py-1.5 rounded-full bg-slate-800 text-primary text-xs font-bold uppercase tracking-wider mb-6 border border-slate-700">🚀 Sistema Financeiro Validado</span>
+            <span class="inline-block px-4 py-1.5 rounded-full bg-slate-800 text-accent text-xs font-bold uppercase tracking-wider mb-6 border border-slate-700">🚀 Sistema Financeiro Validado</span>
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-tight">
                 DRE, Metas e <br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-glow">Inteligência Artificial</span>
@@ -79,26 +87,26 @@
                     <a href="#precos" class="px-8 py-4 bg-primary hover:bg-primary-dark text-white text-lg font-bold rounded-2xl transition shadow-xl shadow-primary/25 flex items-center justify-center gap-2">
                         Ver Planos e Preços <i class="fa-solid fa-arrow-down"></i>
                     </a>
-                    <!-- BOTÃO TESTAR AGORA ATUALIZADO -->
-                    <a href="https://ohebertfernandes.github.io/fycash/" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white text-lg font-bold rounded-2xl transition border border-slate-700 flex items-center justify-center gap-2">
-                        Testar Gratuitamente
+                    <!-- BOTÃO TESTAR: Adicionado target="_blank" -->
+                    <a href="https://ohebertfernandes.github.io/gestaofinanceira/" target="_blank" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white text-lg font-bold rounded-2xl transition border border-slate-700 flex items-center justify-center gap-2">
+                        Testar Gratuitamente <i class="fa-solid fa-external-link-alt text-xs"></i>
                     </a>
                 </div>
                 <p class="text-slate-500 text-xs flex items-center gap-1.5 opacity-80 mt-2">
-                    <i class="fa-solid fa-database text-slate-400"></i> <strong>Nota:</strong> No modo de teste gratuito, os dados ficam apenas no seu navegador.
+                    <i class="fa-solid fa-shield-halved text-accent"></i> <strong>Segurança:</strong> No modo de teste, não armazenamos os seus dados.
                 </p>
             </div>
 
-            <!-- Mockup do App Real -->
+            <!-- Mockup do App Real (Atualizado com Logo e Cores) -->
             <div class="mt-16 md:mt-24 relative mx-auto max-w-5xl">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent z-10 h-full w-full pointer-events-none"></div>
                 
                 <div class="rounded-2xl border border-slate-700 shadow-2xl bg-slate-900 overflow-hidden flex flex-col md:flex-row h-[500px] md:h-[600px] relative">
                     <!-- Sidebar Mockup -->
                     <div class="hidden md:flex flex-col w-64 bg-slate-900 border-r border-slate-800 p-4 shrink-0 text-left">
-                        <div class="flex items-center gap-2 mb-8 px-2">
-                            <div class="w-6 h-6 bg-primary rounded flex items-center justify-center text-white text-[10px] font-bold"><i class="fa-solid fa-bolt"></i></div>
-                            <span class="font-bold text-white tracking-tight">Fycash.</span>
+                        <div class="flex items-center gap-2 mb-8 px-2 justify-center">
+                            <!-- Logo Sidebar Mockup -->
+                            <img src="https://trello.com/1/cards/69839337e9ae9fb5e25dcf21/attachments/6983933d731d0a970bd7b9e1/download/WhatsApp_Image_2026-02-04_at_15.40.37-removebg-preview.png" alt="Fycash" class="h-10 w-auto object-contain">
                         </div>
                         <div class="space-y-1">
                             <div class="flex items-center gap-3 px-3 py-2.5 bg-primary/10 text-primary rounded-lg text-sm font-bold border border-primary/20">
@@ -137,8 +145,8 @@
                                 <p class="text-xs text-slate-400">Resumo financeiro em tempo real.</p>
                             </div>
                             <div class="flex gap-2">
-                                <div class="px-3 py-1.5 bg-green-900/30 text-green-400 rounded-lg text-xs font-bold border border-green-500/30 flex items-center gap-2 shadow-[0_0_10px_rgba(34,197,94,0.2)]">
-                                    <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div> IA Ativa
+                                <div class="px-3 py-1.5 bg-accent/10 text-accent rounded-lg text-xs font-bold border border-accent/20 flex items-center gap-2 shadow-[0_0_10px_rgba(33,233,202,0.1)]">
+                                    <div class="w-2 h-2 rounded-full bg-accent animate-pulse"></div> IA Ativa
                                 </div>
                             </div>
                         </div>
@@ -154,7 +162,7 @@
                                     <span class="text-xs text-green-400 font-bold mb-1.5">Excelente</span>
                                 </div>
                                 <div class="mt-4 h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-primary to-accent w-[85%] rounded-full shadow-[0_0_10px_rgba(14,165,233,0.5)]"></div>
+                                    <div class="h-full bg-gradient-to-r from-primary to-accent w-[85%] rounded-full shadow-[0_0_10px_rgba(141,90,228,0.5)]"></div>
                                 </div>
                             </div>
 
@@ -181,13 +189,13 @@
                         <div class="mt-4 grid grid-cols-3 gap-4 h-full">
                             <div class="col-span-3 md:col-span-2 p-5 rounded-2xl bg-slate-900 border border-slate-800 h-64 relative overflow-hidden">
                                 <h4 class="text-xs font-bold text-slate-300 uppercase mb-4">Fluxo de Caixa</h4>
-                                <!-- Simulated Chart Bars -->
+                                <!-- Simulated Chart Bars with new Colors -->
                                 <div class="flex items-end justify-between gap-2 h-40 w-full px-2">
                                     <div class="w-full bg-slate-800/50 rounded-t-sm h-[40%] hover:bg-slate-800 transition"></div>
                                     <div class="w-full bg-slate-800/50 rounded-t-sm h-[60%] hover:bg-slate-800 transition"></div>
                                     <div class="w-full bg-slate-800/50 rounded-t-sm h-[35%] hover:bg-slate-800 transition"></div>
                                     <div class="w-full bg-slate-800/50 rounded-t-sm h-[75%] hover:bg-slate-800 transition"></div>
-                                    <div class="w-full bg-primary rounded-t-sm h-[90%] shadow-[0_0_20px_rgba(14,165,233,0.4)] relative group">
+                                    <div class="w-full bg-primary rounded-t-sm h-[90%] shadow-[0_0_20px_rgba(141,90,228,0.4)] relative group">
                                         <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-slate-900 text-[10px] font-bold px-2 py-0.5 rounded opacity-0 group-hover:opacity-100 transition">R$ 8.2k</div>
                                     </div>
                                     <div class="w-full bg-slate-800/50 rounded-t-sm h-[55%] hover:bg-slate-800 transition"></div>
@@ -195,12 +203,12 @@
                                 </div>
                             </div>
                             <!-- Goal Mockup -->
-                            <div class="col-span-3 md:col-span-1 p-5 rounded-2xl bg-gradient-to-b from-indigo-900 to-slate-900 border border-indigo-900/50 h-64 relative overflow-hidden">
+                            <div class="col-span-3 md:col-span-1 p-5 rounded-2xl bg-gradient-to-b from-primary/20 to-slate-900 border border-primary/20 h-64 relative overflow-hidden">
                                 <h4 class="text-xs font-bold text-white mb-2 z-10 relative">Meta Principal</h4>
-                                <div class="absolute bottom-0 right-0 w-32 h-32 bg-indigo-500/20 blur-3xl rounded-full"></div>
+                                <div class="absolute bottom-0 right-0 w-32 h-32 bg-primary/20 blur-3xl rounded-full"></div>
                                 <div class="relative z-10 mt-4 text-center">
-                                    <div class="w-24 h-24 rounded-full border-[6px] border-slate-800 border-t-indigo-500 border-r-indigo-500 mx-auto flex items-center justify-center mb-2 shadow-lg">
-                                        <i class="fa-solid fa-car text-2xl text-indigo-400"></i>
+                                    <div class="w-24 h-24 rounded-full border-[6px] border-slate-800 border-t-accent border-r-accent mx-auto flex items-center justify-center mb-2 shadow-lg">
+                                        <i class="fa-solid fa-car text-2xl text-accent"></i>
                                     </div>
                                     <p class="text-xs text-slate-400">Carro Novo</p>
                                     <p class="text-xl font-bold text-white">65%</p>
@@ -223,42 +231,72 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- DRE -->
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300">
-                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition">
                         <i class="fa-solid fa-file-invoice-dollar"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">DRE Gerencial</h3>
                     <p class="text-slate-500 leading-relaxed text-sm">Calcula automaticamente sua Receita Bruta, Margem de Contribuição, EBIT e Lucro Líquido.</p>
                 </div>
+
                 <!-- IA -->
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300">
-                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition">
                         <i class="fa-solid fa-robot"></i>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-3">IA de Comandos</h3>
-                    <p class="text-slate-500 leading-relaxed text-sm">Escreva "Gastei 50 no mercado" no chat inteligente e o sistema categoriza e lança para você.</p>
+                    <p class="text-slate-500 leading-relaxed text-sm">Escreva "Gastei 50 no mercado" no nosso chat inteligente e o sistema categoriza, data e lança o valor para você.</p>
                 </div>
+
+                <!-- Juros Compostos -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
+                    <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-accent group-hover:text-slate-900 transition">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Projeção Futura</h3>
+                    <p class="text-slate-500 leading-relaxed text-sm">Simulador de Juros Compostos integrado. Defina aporte mensal e taxa anual para ver quando atingirá seu primeiro milhão.</p>
+                </div>
+                
+                <!-- Dívidas -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
+                    <div class="w-14 h-14 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-red-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-bomb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Gestão de Dívidas</h3>
+                    <p class="text-slate-500 leading-relaxed text-sm">Algoritmos "Bola de Neve" e "Avalanche" embutidos para ajudar você a priorizar qual dívida pagar primeiro.</p>
+                </div>
+
                 <!-- ARCA -->
-                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300">
-                    <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
+                    <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-orange-500 group-hover:text-white transition">
                         <i class="fa-solid fa-chart-pie"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Metodologia ARCA</h3>
-                    <p class="text-slate-500 leading-relaxed text-sm">Visualize a alocação dos seus investimentos seguindo a metodologia ARCA.</p>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Gráfico ARCA</h3>
+                    <p class="text-slate-500 leading-relaxed text-sm">Visualizador da metodologia ARCA (Ações, Real Estate, Caixa, Ativos Internacionais) para balancear sua carteira.</p>
+                </div>
+
+                <!-- Orçamento -->
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition duration-300 group">
+                    <div class="w-14 h-14 bg-teal-100 text-teal-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-500 group-hover:text-white transition">
+                        <i class="fa-solid fa-sliders"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Orçamentos Prontos</h3>
+                    <p class="text-slate-500 leading-relaxed text-sm">Aplique modelos como "50/30/20" ou "Modo Guerra" com um único botão para definir seus limites de gastos.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
+    <!-- Pricing (Kiwify Integration Ready) -->
     <section id="precos" class="py-24 bg-slate-900 relative overflow-hidden">
+        <!-- Background Effects -->
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 blur-[100px] rounded-full pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16 text-white">
-                <h2 class="text-3xl md:text-5xl font-bold mb-4">Planos e Preços</h2>
-                <p class="text-slate-400 text-lg">Comece a testar agora sem compromisso.</p>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Escolha seu Plano</h2>
+                <p class="text-slate-400 text-lg">Acesso imediato com garantia de 7 dias.</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto items-end">
@@ -278,8 +316,8 @@
                         <li class="flex items-center gap-3 text-red-400"><i class="fa-solid fa-xmark"></i> Sem acesso multi-dispositivo</li>
                     </ul>
                     <div class="space-y-3">
-                        <!-- LINK ATUALIZADO AQUI -->
-                        <a href="https://ohebertfernandes.github.io/fycash/" class="w-full py-3 border border-slate-500 text-white font-bold rounded-xl hover:bg-slate-700 transition text-center text-sm block">
+                        <!-- LINK ATUALIZADO: Testar Agora com target="_blank" -->
+                        <a href="https://ohebertfernandes.github.io/gestaofinanceira/" target="_blank" class="w-full py-3 border border-slate-500 text-white font-bold rounded-xl hover:bg-slate-700 transition text-center text-sm block">
                             Testar Agora
                         </a>
                         <p class="text-[10px] text-center text-slate-500">
@@ -295,10 +333,10 @@
                         <h3 class="text-4xl font-bold text-white mt-2">R$ 19,90<span class="text-sm text-slate-500 font-normal">/mês</span></h3>
                     </div>
                     <ul class="space-y-4 mb-8 flex-1 text-sm">
-                        <li class="flex items-center gap-3 text-white"><i class="fa-solid fa-check text-green-500"></i> <strong>Salva dados na Nuvem</strong></li>
-                        <li class="flex items-center gap-3 text-slate-300"><i class="fa-solid fa-check text-green-500"></i> Acesso em PC e Telemóvel</li>
-                        <li class="flex items-center gap-3 text-slate-300"><i class="fa-solid fa-check text-green-500"></i> DRE & Relatórios Completos</li>
-                        <li class="flex items-center gap-3 text-slate-300"><i class="fa-solid fa-check text-green-500"></i> Suporte Prioritário</li>
+                        <li class="flex items-center gap-3 text-white"><i class="fa-solid fa-check text-accent"></i> <strong>Salva dados na Nuvem</strong></li>
+                        <li class="flex items-center gap-3 text-slate-300"><i class="fa-solid fa-check text-accent"></i> Acesso em PC e Telemóvel</li>
+                        <li class="flex items-center gap-3 text-slate-300"><i class="fa-solid fa-check text-accent"></i> DRE & Relatórios Completos</li>
+                        <li class="flex items-center gap-3 text-slate-300"><i class="fa-solid fa-check text-accent"></i> Suporte Prioritário</li>
                         <li class="flex items-center gap-3 text-slate-500"><i class="fa-solid fa-minus"></i> Sem desconto anual</li>
                     </ul>
                     <a href="https://pay.kiwify.com.br/s5E6Zab" target="_blank" class="w-full py-4 border-2 border-slate-500 text-white font-bold rounded-xl hover:bg-slate-700 hover:border-slate-400 transition text-center text-sm block">
@@ -311,7 +349,7 @@
                     <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl tracking-wider">ECONOMIZE +50%</div>
                     <div class="mb-4">
                         <span class="text-primary font-bold uppercase text-xs tracking-wider">Anual (Recomendado)</span>
-                        <h3 class="text-4xl font-bold text-white mt-2">R$ 97,00<span class="text-lg text-slate-400 font-normal">/ano</span></h3>
+                        <h3 class="text-5xl font-extrabold text-white mt-2">R$ 97<span class="text-lg text-slate-400 font-normal">/ano</span></h3>
                         <p class="text-slate-400 text-xs mt-1">Equivale a apenas R$ 8,08/mês</p>
                     </div>
                     <ul class="space-y-4 mb-8 flex-1 text-sm">
@@ -338,7 +376,7 @@
     <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <div class="w-6 h-6 bg-primary rounded flex items-center justify-center text-white text-xs font-bold"><i class="fa-solid fa-bolt"></i></div>
+                 <img src="https://trello.com/1/cards/69839337e9ae9fb5e25dcf21/attachments/6983933d731d0a970bd7b9e1/download/WhatsApp_Image_2026-02-04_at_15.40.37-removebg-preview.png" alt="Fycash" class="h-6 w-auto object-contain">
                 <span class="font-bold text-white text-lg">Fycash.</span>
             </div>
             <div class="text-xs text-center md:text-right">
